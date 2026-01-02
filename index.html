@@ -1,140 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Pakpattan Movie Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#0b0b0b;
-      color:white;
-      text-align:center;
-    }
-
-    header{
-      background: url('How to Train Your Dragon (2025).jpg') no-repeat center/cover;
-      padding:100px 20px;
-    }
-
-    header h1{
-      font-size:48px;
-      margin-bottom:10px;
-    }
-
-    header p{
-      font-size:20px;
-      color:#ddd;
-    }
-
-    section{
-      padding:60px 20px;
-      max-width:900px;
-      margin:auto;
-    }
-
-    h2{
-      color:#f5c542;
-      margin-bottom:20px;
-    }
-
-    .services{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-      gap:20px;
-    }
-
-    .box{
-      background:#151515;
-      padding:20px;
-      border-radius:10px;
-    }
-
-    .box:hover{
-      background:#222;
-    }
-
-    footer{
-      background:#111;
-      padding:20px;
-      font-size:14px;
-      color:#aaa;
-    }
-
-    a{
-      color:#f5c542;
-      text-decoration:none;
-    }
-  </style>
-  <style>
-  #gallery {
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-
-  .gallery img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  }
-</style>
-
+<meta charset="UTF-8">
+<title>Pakpattan Movie Studio</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<header>
+<!-- HERO BANNER -->
+<div class="hero" style="background-image:url('images/banner/hero.jpg')">
   <h1>Pakpattan Movie Studio</h1>
-  <p>Professional Video & Movie Making Studio</p>
-</header>
+  <p>Professional Video & Movie Making</p>
+</div>
 
-<section>
-  <h2>About Us</h2>
-  <p>
-    Pakpattan Movie Studio is a professional and creative media studio.
-    We create movies, short films, cinematic videos, YouTube content,
-    and promotional visuals with high quality storytelling.
-  </p>
-</section>
+<!-- MOVIES SECTION -->
+<h2 class="title">🎬 Our Movies</h2>
+<div class="row">
+  <img src="images/movies/movie1.jpg">
+  <img src="images/movies/movie2.jpg">
+  <img src="images/movies/movie3.jpg">
+  <img src="images/movies/movie4.jpg">
+</div>
 
-<section>
-  <h2>Our Services</h2>
+<!-- SHORT FILMS -->
+<h2 class="title">🎥 Short Films</h2>
+<div class="row">
+  <img src="images/shorts/short1.jpg">
+  <img src="images/shorts/short2.jpg">
+  <img src="images/shorts/short3.jpg">
+</div>
 
-  <div class="services">
-    <div class="box">🎬 Movie & Short Film Production</div>
-    <div class="box">📹 YouTube Video Editing</div>
-    <div class="box">🎧 Voice Over & Background Music</div>
-    <div class="box">🖼 Thumbnail & Poster Design</div>
-  </div>
-</section>
-<section id="gallery">
-  <h2>Our Work Gallery</h2>
-
-  <div class="gallery">
-    <img src="images/work1.jpg" alt="Movie Scene 1">
-    <img src="images/work2.jpg" alt="Movie Scene 2">
-    <img src="images/work3.jpg" alt="Movie Scene 3">
-    <img src="images/work4.jpg" alt="Movie Scene 4">
-  </div>
-</section>
-
-<section>
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:pakpattanmoviestudio@gmail.com">pakpattanmoviestudio@gmail.com</a></p>
-  <p>WhatsApp: <a href="https://wa.me/92XXXXXXXXXX">+92 XXXXXXXXXX</a></p>
-</section>
+<!-- YOUTUBE -->
+<h2 class="title">▶ YouTube Projects</h2>
+<div class="row">
+  <img src="images/youtube/yt1.jpg">
+  <img src="images/youtube/yt2.jpg">
+</div>
 
 <footer>
-  © 2026 Pakpattan Movie Studio. All Rights Reserved.
+<p>📧 pakpattanmoviestudio@gmail.com</p>
+<p>📱 WhatsApp: +92XXXXXXXXX</p>
 </footer>
 
 </body>
