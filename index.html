@@ -250,6 +250,33 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
-<!--End of Tawk.to Script-->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close">&times;</span>
+    <h2>Welcome 👋</h2>
+    <p>Thanks for visiting our website.</p>
+    <button>Contact Us</button>
+  </div>
+</div>
+<script>
+  const openBtn = document.getElementById("openPopup");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("closePopup");
+
+  openBtn.onclick = () => {
+    popup.style.display = "block";
+  };
+
+  closeBtn.onclick = () => {
+    popup.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  };
+</script>
+
 </body>
 </html>
