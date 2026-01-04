@@ -2,510 +2,122 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Web Experience</title>
+<title>Pakpattan Movie Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
-}
-
 body{
-  background:#0b0b0f;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#111;
   color:#fff;
-  overflow-x:hidden;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
+  padding:20px;
+  text-align:center;
+  background:#000;
+}
+
+/* IMAGE */
+.main-img{
+  width:100%;
+  max-height:300px;
+  object-fit:cover;
+}
+
+/* VIDEO */
+video{
+  width:100%;
+  max-width:600px;
+  display:block;
+  margin:20px auto;
+}
+
+/* GALLERY */
+.gallery{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:20px;
+}
+.gallery img{
+  width:150px;
+  cursor:pointer;
+  border-radius:10px;
+}
+
+/* POPUP */
+#popup{
+  display:none;
   position:fixed;
   top:0;
+  left:0;
   width:100%;
-  padding:20px 80px;
-  display:flex;
-  justify-content:space-between;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
   align-items:center;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter:blur(10px);
-  z-index:1000;
 }
-
-header h1{
-  color:#e50914;
-  font-weight:700;
-}
-
-nav a{
-  margin-left:25px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:500;
-  transition:0.3s;
-}
-
-nav a:hover{
-  color:#e50914;
-}
-
-/* ===== HERO ===== */
-.hero{
-  height:100vh;
-  background:
-  linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2)),
-  url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  padding:0 80px;
-}
-
-.hero-content{
-  max-width:600px;
-}
-
-.hero-content h2{
-  font-size:52px;
-  font-weight:700;
-  margin-bottom:20px;
-}
-
-.hero-content p{
-  font-size:18px;
-  color:#ccc;
-  margin-bottom:30px;
-}
-
-.hero-content button{
-  padding:14px 32px;
-  border:none;
-  background:#e50914;
-  color:#fff;
-  font-size:16px;
-  border-radius:30px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.hero-content button:hover{
-  background:#ff1f2d;
-  transform:scale(1.05);
-}
-
-/* ===== FEATURES ===== */
-section{
-  padding:80px;
-}
-
-.section-title{
-  font-size:36px;
-  margin-bottom:50px;
-  text-align:center;
-}
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:#14141c;
-  padding:30px;
-  border-radius:20px;
-  transition:0.4s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.5);
-}
-
-.card h3{
-  margin-bottom:15px;
-  color:#e50914;
-}
-
-.card p{
-  color:#bbb;
-}
-
-/* ===== CTA ===== */
-.cta{
-  background:linear-gradient(135deg,#e50914,#b20710);
-  padding:80px;
-  text-align:center;
-  border-radius:40px;
-  margin:80px;
-}
-
-.cta h2{
-  font-size:40px;
-  margin-bottom:20px;
-}
-
-.cta button{
-  padding:14px 40px;
-  background:#fff;
-  color:#000;
-  border:none;
-  border-radius:30px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.cta button:<a href="https://yourlink.com" target="_blank" class="apply-btn">
-  Apply for Freelance
-</a>
-
-}
-
-/* ===== FOOTER ===== */
-footer{
-  text-align:center;
-  padding:40px;
-  color:#777;
-  background:#0b0b0f;
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  header{
-    padding:20px;
-  }
-  .hero{
-    padding:0 20px;
-  }
-  .hero-content h2{
-    font-size:36px;
-  }
-  section{
-    padding:60px 20px;
-  }
+#popup img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- ===== HEADER ===== -->
 <header>
-  <h1>PRO WEB</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Features</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
+  <h1>Pakpattan Movie Studio</h1>
 </header>
 
-<div class="hero">
-  <div class="hero-content">
-    <h2>High-Level Professional Website</h2>
-    <p>Premium design, smooth animations and a powerful user experience that makes visitors come back again and again.</p>
-    <button>Get Started</button>
-  </div>
-</div>
+<!-- ===== MAIN IMAGE ===== -->
+<img src="images/banner.jpg" class="main-img">
 
-<section>
-  <h2 class="section-title">Why This Website Looks Premium?</h2>
-  <div class="features">
-    <div class="card">
-      <h3>Modern UI</h3>
-      <p>Clean, attractive and professional design inspired by top-level platforms.</p>
-    </div>
-    <div class="card">
-      <h3>Fast & Smooth</h3>
-      <p>Optimized layout with smooth hover effects and animations.</p>
-    </div>
-    <div class="card">
-      <h3>Responsive</h3>
-      <p>Perfect view on mobile, tablet and desktop devices.</p>
-    </div>
-    <div class="card">
-      <h3>High Conversion</h3>
-      <p>Designed to keep users engaged and returning.</p>
-    </div>
-  </div>
-</section>
-
-<div class="cta">
-  <h2>Build Your Premium Online Presence</h2>
-  <button>Launch Now</button>
-</div>
-
-<footer>
-  © 2026 Premium Web. All Rights Reserved.
-</footer>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69594517a537b6197bd03c33/1je2bbq1s';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span id="closePopup" class="close">&times;</span>
-    <h2>Welcome 👋</h2>
-    <p>Thanks for visiting our website.</p>
-    <button>Contact Us</button>
-  </div>
-</div>
-<script>
-  const openBtn = document.getElementById("openPopup");
-  const popup = document.getElementById("popup");
-  const closeBtn = document.getElementById("closePopup");
-
-  openBtn.onclick = () => {
-    popup.style.display = "block";
-  };
-
-  closeBtn.onclick = () => {
-    popup.style.display = "none";
-  };
-
-  window.onclick = (e) => {
-    if (e.target === popup) {
-      popup.style.display = "none";
-    }
-  };
-</script>
-<!-- Freelance Section -->
-<section class="freelance-section">
-  <h2>Work With Pakpattan Movie Studio</h2>
-  <p>Join us as a Freelancer – Video Editing, Acting, Voice Over, Design & More</p>
-
-  <div class="freelance-buttons">
-    <button class="apply-btn" onclick="openPopup()">Apply Now</button>
-
-    <a href="https://wa.me/923042249321" target="_blank" class="whatsapp-btn">
-      Apply on WhatsApp
-    </a>
-
-    <a href="https://forms.gle/XXXXXXX" target="_blank" class="google-btn">
-      Apply via Google Form
-    </a>
-  </div>
-</section>
-
-<!-- Popup Form -->
-<div class="popup" id="popupForm">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup()">×</span>
-    <h3>Freelance Application</h3>
-
-    <form action="mailto:rao.muzamal.shekra@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="Name" placeholder="Your Name" required>
-      <input type="email" name="Email" placeholder="Your Email" required>
-      <input type="text" name="Skill" placeholder="Your Skill (Editor, Actor etc)">
-      <textarea name="Message" placeholder="Tell us about yourself"></textarea>
-      <button type="submit">Send Application</button>
-    </form>
-  </div>
-</div>
-<script>
-function openPopup(){
-  document.getElementById("popupForm").style.display = "block";
-}
-
-function closePopup(){
-  document.getElementById("popupForm").style.display = "none";
-}
-</script>
-<div class="social-float">
-
-  <a href="https://pakpattanmoviestudio.com" target="_blank" class="whatsapp-btn">
-    WhatsApp
-  </a>
-
-  <a href="https://pakpattanmoviestudio.com" target="_blank" class="google-btn">
-    Google
-  </a>
-
-</div>
-href="https://pakpattanmoviestudio.com"
-<img src="images/banner.jpg" alt="My Image" class="my-image">
-<video class="my-video" controls>
+<!-- ===== VIDEO ===== -->
+<video controls>
   <source src="videos/movie.mp4" type="video/mp4">
-  Your browser does not support video.
 </video>
-<audio controls class="my-audio">
-  <source src="audio/voice.mp3" type="audio/mpeg">
-  Your browser does not support audio.
-</audio>
-index.html
-style.css
 
-/images
-   banner.jpg
-
-/videos
-   movie.mp4
-<script>
-  document.addEventListener("click", function () {
-    document.getElementById("myVoice").play();
-  }, { once: true });
-</script>
-<!-- 🎬 VIDEO SECTION -->
-<div style="width:100%; max-width:900px; margin:40px auto;">
-  <video controls width="100%">
-    <source src="videos/movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-<!-- 🎙️ WELCOME VOICE -->
+<!-- ===== AUDIO (ONE ONLY) ===== -->
 <audio id="welcomeVoice">
-  <source src="audio/voice.mp3" type="audio/mpeg">
+  <source src="audio/welcome.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🎵 BACKGROUND MUSIC (LOW VOLUME) -->
-<audio id="bgMusic" loop>
-  <source src="audio/Voies.mp3" type="audio/mpeg">
-</audio>
-
-<!-- 🎨 NETFLIX STYLE AUTO PLAY SCRIPT -->
-<script>
-  document.addEventListener("click", function () {
-
-    // welcome voice
-    const welcome = document.getElementById("welcomeVoice");
-    welcome.volume = 1.0;
-    welcome.play();
-
-    // background music
-    const bg = document.getElementById("bgMusic");
-    bg.volume = 0.2; // low volume
-    bg.play();
-
-  }, { once: true });
-</script>
-<img src="images/asif.png" alt="Asif Image" width="300">
-<img src="images/work1.png" alt="Work Image" width="300">
-<img src="images/work1.png" class="banner">
-<div class="image-box">
-  <img src="images/asif.png" alt="Asif">
-</div>
-<!-- IMAGE GALLERY -->
+<!-- ===== GALLERY ===== -->
 <div class="gallery">
-  <img src="images/asif.png" onclick="openImage(this.src)">
-  <img src="images/work1.png" onclick="openImage(this.src)">
+  <img src="images/pic1.jpg" onclick="openImage(this.src)">
+  <img src="images/pic2.jpg" onclick="openImage(this.src)">
 </div>
 
-<!-- POPUP -->
+<!-- ===== POPUP ===== -->
 <div id="popup" onclick="closeImage()">
-  <span class="close">&times;</span>
   <img id="popupImg">
 </div>
 
 </body>
-  <script>
+
+<!-- ✅ JS BODY KE BAAD -->
+<script>
 function openImage(src){
   document.getElementById("popup").style.display="flex";
-  document.getElementById("popupImg").src=src;
+  document.getElementById("popupImg").src = src;
 }
+
 function closeImage(){
   document.getElementById("popup").style.display="none";
 }
-</script>
-  <!-- Image -->
-<img src="images/work1.png" class="thumb" onclick="openPopup('images/work1.png','image')">
 
-<!-- Video -->
-<img src="images/work1.png" class="thumb" onclick="openPopup('videos/movie.mp4','video')">
-
-<!-- Popup -->
-<div id="popup" onclick="closePopup()">
-  <img id="popupImg">
-  <video id="popupVideo" controls></video>
-</div>
-<div id="swipeBox">Swipe Me</div>
-<img src="images/asif.png" class="fade zoom" width="300">
-<!-- Image -->
-<img src="images/work1.png" class="thumb" onclick="openPopup('images/work1.png','image')">
-
-<!-- Video -->
-<img src="images/work1.png" class="thumb" onclick="openPopup('videos/movie.mp4','video')">
-
-<!-- Popup -->
-<div id="popup" onclick="closePopup()">
-  <img id="popupImg">
-  <video id="popupVideo" controls></video>
-</div>
- <div id="swipeBox">Swipe Me</div>
- <img src="images/asif.png" class="fade zoom" width="300">
-
-</boday>
-  <script>
-function openPopup(src,type){
-  document.getElementById("popup").style.display="flex";
-
-  if(type==="image"){
-    popupImg.src=src;
-    popupImg.style.display="block";
-    popupVideo.style.display="none";
-  }else{
-    popupVideo.src=src;
-    popupVideo.style.display="block";
-    popupImg.style.display="none";
-  }
-}
-
-function closePopup(){
-  popup.style.display="none";
-  popupVideo.pause();
-}
-</script>
-<script>
-let startX=0;
-swipeBox.addEventListener("touchstart",e=>{
-  startX=e.touches[0].clientX;
-});
-swipeBox.addEventListener("touchend",e=>{
-  let endX=e.changedTouches[0].clientX;
-  if(endX-startX>50) alert("Right Swipe 👉");
-  if(startX-endX>50) alert("Left Swipe 👈");
-});
-</script>
-<script>
-let startX=0;
-swipeBox.addEventListener("touchstart",e=>{
-  startX=e.touches[0].clientX;
-});
-swipeBox.addEventListener("touchend",e=>{
-  let endX=e.changedTouches[0].clientX;
-  if(endX-startX>50) alert("Right Swipe 👉");
-  if(startX-endX>50) alert("Left Swipe 👈");
-});
-</script>
-<script>
-function openPopup(src,type){
-  document.getElementById("popup").style.display="flex";
-
-  if(type==="image"){
-    popupImg.src=src;
-    popupImg.style.display="block";
-    popupVideo.style.display="none";
-  }else{
-    popupVideo.src=src;
-    popupVideo.style.display="block";
-    popupImg.style.display="none";
-  }
-}
-
-function closePopup(){
-  popup.style.display="none";
-  popupVideo.pause();
-}
+/* Audio sirf 1 bar auto play */
+document.addEventListener("click", function(){
+  document.getElementById("welcomeVoice").play();
+},{ once:true });
 </script>
 
 </html>
