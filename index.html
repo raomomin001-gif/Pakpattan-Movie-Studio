@@ -363,6 +363,40 @@ style.css
     document.getElementById("myVoice").play();
   }, { once: true });
 </script>
+<!-- 🎬 VIDEO SECTION -->
+<div style="width:100%; max-width:900px; margin:40px auto;">
+  <video controls width="100%">
+    <source src="videos/movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- 🎙️ WELCOME VOICE -->
+<audio id="welcomeVoice">
+  <source src="audio/voice.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎵 BACKGROUND MUSIC (LOW VOLUME) -->
+<audio id="bgMusic" loop>
+  <source src="audio/Voies.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🎨 NETFLIX STYLE AUTO PLAY SCRIPT -->
+<script>
+  document.addEventListener("click", function () {
+
+    // welcome voice
+    const welcome = document.getElementById("welcomeVoice");
+    welcome.volume = 1.0;
+    welcome.play();
+
+    // background music
+    const bg = document.getElementById("bgMusic");
+    bg.volume = 0.2; // low volume
+    bg.play();
+
+  }, { once: true });
+</script>
 
 </body>
 </html>
