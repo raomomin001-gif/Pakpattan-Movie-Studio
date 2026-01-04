@@ -395,6 +395,26 @@ style.css
 <div class="image-box">
   <img src="images/asif.png" alt="Asif">
 </div>
+<!-- IMAGE GALLERY -->
+<div class="gallery">
+  <img src="images/asif.png" onclick="openImage(this.src)">
+  <img src="images/work1.png" onclick="openImage(this.src)">
+</div>
+
+<!-- POPUP -->
+<div id="popup" onclick="closeImage()">
+  <span class="close">&times;</span>
+  <img id="popupImg">
+</div>
 
 </body>
+  <script>
+function openImage(src){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popupImg").src=src;
+}
+function closeImage(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
 </html>
