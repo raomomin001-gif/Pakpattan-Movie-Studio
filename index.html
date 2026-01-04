@@ -279,6 +279,39 @@ s0.parentNode.insertBefore(s1,s0);
     }
   };
 </script>
+<!-- Freelance Section -->
+<section class="freelance-section">
+  <h2>Work With Pakpattan Movie Studio</h2>
+  <p>Join us as a Freelancer – Video Editing, Acting, Voice Over, Design & More</p>
+
+  <div class="freelance-buttons">
+    <button class="apply-btn" onclick="openPopup()">Apply Now</button>
+
+    <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-btn">
+      Apply on WhatsApp
+    </a>
+
+    <a href="https://forms.gle/XXXXXXX" target="_blank" class="google-btn">
+      Apply via Google Form
+    </a>
+  </div>
+</section>
+
+<!-- Popup Form -->
+<div class="popup" id="popupForm">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">×</span>
+    <h3>Freelance Application</h3>
+
+    <form action="mailto:rao.muzamal.shekra@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="Name" placeholder="Your Name" required>
+      <input type="email" name="Email" placeholder="Your Email" required>
+      <input type="text" name="Skill" placeholder="Your Skill (Editor, Actor etc)">
+      <textarea name="Message" placeholder="Tell us about yourself"></textarea>
+      <button type="submit">Send Application</button>
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
