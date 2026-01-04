@@ -219,5 +219,21 @@ document.addEventListener("click", function () {
   voice.play();
 }, { once: true });
 </script>
+<script>
+window.addEventListener("load", function () {
+  const voice = document.getElementById("autoVoice");
+
+  // muted autoplay (browser allow karta hai)
+  voice.play().then(() => {
+    // first click par unmute
+    document.addEventListener("click", function () {
+      voice.muted = false;
+      voice.volume = 1;
+    }, { once: true });
+  }).catch(() => {
+    console.log("Autoplay blocked, waiting for user click");
+  });
+});
+</script>
 
 </html>
