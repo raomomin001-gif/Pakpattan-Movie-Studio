@@ -267,4 +267,8 @@ footer{
   max-width:800px;
   border-radius:15px;
 }
+.my-audio{
+  width:100%;
+  max-width:400px;
+}
 
