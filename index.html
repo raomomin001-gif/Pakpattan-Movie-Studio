@@ -209,5 +209,12 @@ function toggleVoice(){
   isPlaying = !isPlaying;
 }
 </script>
+<script>
+document.addEventListener("click", function () {
+  var voice = document.getElementById("autoVoice");
+  voice.volume = 1;
+  voice.play();
+}, { once: true });
+</script>
 
 </html>
