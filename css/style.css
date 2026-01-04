@@ -257,4 +257,9 @@ footer{
 
 .whatsapp-btn{ background:#25D366; }
 .google-btn{ background:#4285F4; }
+.my-image{
+  width:100%;
+  max-width:600px;
+  border-radius:15px;
+}
 
