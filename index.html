@@ -173,5 +173,23 @@ document.addEventListener("click",()=>{
   </button>
 </div>
 
-</body>
+</body> 
+  <script>
+const voice = document.getElementById("welcomeVoice");
+let isPlaying = false;
+
+function toggleVoice(){
+  if(!isPlaying){
+    voice.play();
+    voice.volume = 1;
+    voiceBtn.innerText = "🔇 Voice OFF";
+  }else{
+    voice.pause();
+    voice.currentTime = 0;
+    voiceBtn.innerText = "🔊 Voice ON";
+  }
+  isPlaying = !isPlaying;
+}
+</script>
+
 </html>
