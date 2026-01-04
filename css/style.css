@@ -236,4 +236,25 @@ footer{
   font-size:22px;
   cursor:pointer;
 }
+.social-float{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.social-float a{
+  width: 120px;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.whatsapp-btn{ background:#25D366; }
+.google-btn{ background:#4285F4; }
 
