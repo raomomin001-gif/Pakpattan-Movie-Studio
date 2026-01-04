@@ -490,4 +490,13 @@ style.css
   opacity: 0.9;
 }
 background-image: url("../images/hero-bg.png");
+.hero{
+  height: 80vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("../images/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
