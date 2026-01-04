@@ -417,4 +417,39 @@ function closeImage(){
   document.getElementById("popup").style.display="none";
 }
 </script>
+  <!-- Image -->
+<img src="images/work1.png" class="thumb" onclick="openPopup('images/work1.png','image')">
+
+<!-- Video -->
+<img src="images/work1.png" class="thumb" onclick="openPopup('videos/movie.mp4','video')">
+
+<!-- Popup -->
+<div id="popup" onclick="closePopup()">
+  <img id="popupImg">
+  <video id="popupVideo" controls></video>
+</div>
+<div id="swipeBox">Swipe Me</div>
+<img src="images/asif.png" class="fade zoom" width="300">
+</boday>
+  <script>
+function openPopup(src,type){
+  document.getElementById("popup").style.display="flex";
+
+  if(type==="image"){
+    popupImg.src=src;
+    popupImg.style.display="block";
+    popupVideo.style.display="none";
+  }else{
+    popupVideo.src=src;
+    popupVideo.style.display="block";
+    popupImg.style.display="none";
+  }
+}
+
+function closePopup(){
+  popup.style.display="none";
+  popupVideo.pause();
+}
+</script>
+
 </html>
