@@ -142,4 +142,98 @@ footer{
   background:#b20710;
   transform:scale(1.05);
 }
+.freelance-section{
+  background:#000;
+  color:#fff;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.freelance-buttons{
+  margin-top:20px;
+}
+
+.apply-btn,
+.whatsapp-btn,
+.google-btn{
+  display:inline-block;
+  margin:10px;
+  padding:14px 34px;
+  border-radius:30px;
+  font-size:16px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+}
+
+.apply-btn{
+  background:#e50914;
+  color:#fff;
+}
+
+.whatsapp-btn{
+  background:#25D366;
+  color:#fff;
+}
+
+.google-btn{
+  background:#4285F4;
+  color:#fff;
+}
+
+.apply-btn:hover,
+.whatsapp-btn:hover,
+.google-btn:hover{
+  opacity:0.85;
+  transform:scale(1.05);
+}
+
+/* Popup */
+.popup{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  z-index:999;
+}
+
+.popup-content{
+  background:#111;
+  color:#fff;
+  max-width:400px;
+  margin:8% auto;
+  padding:30px;
+  border-radius:15px;
+  position:relative;
+}
+
+.popup-content input,
+.popup-content textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
+}
+
+.popup-content button{
+  width:100%;
+  padding:12px;
+  background:#e50914;
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
 
