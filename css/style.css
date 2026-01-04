@@ -431,4 +431,28 @@ style.css
   from{opacity:0;}
   to{opacity:1;}
 }
+.netflix-row{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  padding:10px;
+}
+.netflix-card{
+  min-width:220px;
+  position:relative;
+  transition:0.4s;
+}
+.netflix-card img{
+  width:100%;
+  border-radius:12px;
+}
+.netflix-card span{
+  position:absolute;
+  bottom:10px;left:10px;
+  font-size:14px;
+}
+.netflix-card:hover{
+  transform:scale(1.15);
+  z-index:5;
+}
 
