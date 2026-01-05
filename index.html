@@ -55,7 +55,16 @@ section{padding:80px}
 
 /* GALLERY */
 .gallery{display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
-.gallery img{width:180px;border-radius:12px}
+.gallery img{width:180px;cursor:pointer;border-radius:12px}
+
+/* POPUP */
+#popup{
+  display:none;position:fixed;top:0;left:0;
+  width:100%;height:100%;background:#000c;
+  justify-content:center;align-items:center;z-index:2000
+}
+#popup img{max-width:90%;max-height:90%}
+.close{position:absolute;top:20px;right:30px;font-size:30px;cursor:pointer}
 </style>
 </head>
 
@@ -74,7 +83,7 @@ section{padding:80px}
   <div>
     <h2>Professional Movie Studio</h2>
     <p>Premium design & powerful experience</p>
-    <button>Apply Freelance</button>
+    <button onclick="openForm()">Apply Freelance</button>
   </div>
 </div>
 
@@ -99,15 +108,155 @@ section{padding:80px}
 </video>
 </div>
 
+<!-- AUDIO -->
+<audio id="welcomeVoice">
+  <source src="audio/voice.mp3" type="audio/mpeg">
+</audio>
+
 <!-- GALLERY -->
 <div class="gallery">
-  <img src="images/asif.png">
-  <img src="images/work1.png">
+  <img src="images/asif.png" onclick="openImage(this.src)">
+  <img src="images/work1.png" onclick="openImage(this.src)">
+</div>
+
+<!-- IMAGE POPUP -->
+<div id="popup" onclick="closeImage()">
+  <span class="close">×</span>
+  <img id="popupImg">
+</div>
+
+<!-- FORM POPUP -->
+<div id="popupForm" style="display:none">
 </div>
 
 <footer style="text-align:center;padding:40px;color:#777">
 © 2026 Pakpattan Movie Studio
 </footer>
 
+<script>
+function openImage(src){
+  popup.style.display="flex";
+  popupImg.src=src;
+}
+function closeImage(){
+  popup.style.display="none";
+}
+document.addEventListener("click",()=>{
+  welcomeVoice.play();
+},{once:true});
+</script>
+<!-- 🎬 NETFLIX STYLE CARDS -->
+<section>
+  <h2 style="text-align:center;margin-bottom:30px">Our Work</h2>
+
+  <div class="netflix-row">
+    <div class="netflix-card">
+      <img src="images/work1.png">
+      <span>Movie Project</span>
+    </div>
+
+    <div class="netflix-card">
+      <img src="images/work1.png">
+      <span>Drama Scene</span>
+    </div>
+
+    <div class="netflix-card">
+      <img src="images/work1.png">
+      <span>Short Film</span>
+    </div>
+  </div>
+</section>
+<!-- 🎙️ VOICE CONTROL -->
+<div style="text-align:center;margin:40px">
+  <button onclick="toggleVoice()" id="voiceBtn">
+    🔊 Voice ON
+  </button>
+</div>
+<img src="images/asif.png" class="mobile-anim" width="260">
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),
+    s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69594517a537b6197bd03c33/1je2bbq1s';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<audio id="autoVoice">
+  <source src="audio/voice.mp3" type="audio/mpeg">
+</audio>
+<audio id="autoVoice" muted>
+  <source src="audio/voice.mp3" type="audio/mpeg">
+</audio>
+<audio autoplay loop>
+  <source src="audio/voice.mp3" type="audio/mpeg">
+</audio>
+<audio id="bgMusic" loop>
+ 
+<source src="audio/voice.mp3" type="audio/mpeg">
+https://raw.githubusercontent.com/raomomin001-gif/Pakpattan-Movie-Studio/main/audio/voice.mp3
+
 </body>
+  <div id="voiceOverlay">
+  <button id="startVoice">🔊 Tap to Start Voice</button>
+</div>
+
+<audio id="autoVoice" preload="auto">
+  <source src="https://raw.githubusercontent.com/raomomin001-gif/Pakpattan-Movie-Studio/main/audio/voice.mp3" type="audio/mpeg">
+</audio>
+
+<script src="voice.js"></script>
+
+  <script>
+const voice = document.getElementById("welcomeVoice");
+let isPlaying = false;
+
+function toggleVoice(){
+  if(!isPlaying){
+    voice.play();
+    voice.volume = 1;
+    voiceBtn.innerText = "🔇 Voice OFF";
+  }else{
+    voice.pause();
+    voice.currentTime = 0;
+    voiceBtn.innerText = "🔊 Voice ON";
+  }
+  isPlaying = !isPlaying;
+}
+</script>
+<script>
+document.addEventListener("click", function () {
+  var voice = document.getElementById("autoVoice");
+  voice.volume = 1;
+  voice.play();
+}, { once: true });
+</script>
+<script>
+window.addEventListener("load", function () {
+  const voice = document.getElementById("autoVoice");
+
+  // muted autoplay (browser allow karta hai)
+  voice.play().then(() => {
+    // first click par unmute
+    document.addEventListener("click", function () {
+      voice.muted = false;
+      voice.volume = 1;
+    }, { once: true });
+  }).catch(() => {
+    console.log("Autoplay blocked, waiting for user click");
+  });
+});
+</script>
+<script>
+  window.addEventListener('click', function () {
+    var music = document.getElementById("bgMusic");
+    music.play();
+  }, { once: true });
+</script>
+
 </html>
