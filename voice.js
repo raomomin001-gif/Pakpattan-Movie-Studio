@@ -1,12 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
+const button = document.getElementById("startVoice");
+const audio = document.getElementById("autoVoice");
+const overlay = document.getElementById("voiceOverlay");
 
-  var audio = document.getElementById("autoVoice");
-
-  audio.play().catch(function () {
-    document.body.addEventListener("click", function () {
-      audio.play();
-    }, { once: true });
-  });
-
+button.addEventListener("click", () => {
+  audio.play();
+  overlay.style.display = "none";
 });
-
