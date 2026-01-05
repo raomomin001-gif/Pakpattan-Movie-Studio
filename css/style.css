@@ -1,524 +1,93 @@
+/* =========================
+   BASE
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#000;
+  background:#0b0b0f;
   color:#fff;
 }
 
-/* NAVBAR */
-.navbar{
-  padding:15px 30px;
-  background:#111;
+/* =========================
+   HEADER
+========================= */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(0,0,0,.7);
+  z-index:1000;
+}
+header h1{color:#e50914}
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+}
+nav a:hover{color:#e50914}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  height:100vh;
+  background:linear-gradient(to top,#000,#0005),
+  url('../images/work1.jpg') center/cover;
+  display:flex;
+  align-items:center;
+  padding:80px;
+}
+.hero h2{font-size:48px;margin-bottom:20px}
+.hero p{color:#ccc;margin-bottom:25px}
+.hero button{
+  padding:14px 30px;
+  border:0;
+  border-radius:30px;
+  background:#e50914;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* =========================
+   🔊 VOICE AUTOPLAY FIX (IMPORTANT)
+   Chrome / Mobile Compatible
+========================= */
+#voiceOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#voiceOverlay button{
+  padding:18px 35px;
   font-size:20px;
-}
-
-/* HERO */
-.hero{
-  height:300px;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.6), #000),
-             url('../images/work1.jpg');
-  background-size:cover;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:40px;
-}
-
-.hero h2{
-  font-size:36px;
-  margin:0;
-}
-
-.hero p{
-  color:#ccc;
-}
-
-/* SECTIONS */
-.section{
-  padding:20px;
-}
-
-.section-title{
-  margin-bottom:10px;
-}
-
-/* NETFLIX ROW */
-.row{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-}
-
-.row img{
-  width:220px;
-  border-radius:8px;
-  transition:transform 0.3s;
-  cursor:pointer;
-}
-
-.row img:hover{
-  transform:scale(1.2);
-}
-
-/* YOUTUBE TEXT */
-.yt{
-  color:#bbb;
-}
-
-/* FOOTER */
-footer{
-  background:#111;
-  padding:20px;
-  text-align:center;
-  color:#aaa;
-}
-/* Popup Style */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 9999;
-}
-
-.popup-content {
-  background: #fff;
-  width: 90%;
-  max-width: 400px;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.close {
-  float: right;
-  font-size: 22px;
-  cursor: pointer;
-}
-/* Popup Style */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
-  z-index: 9999;
-}
-
-.popup-content {
-  background: #fff;
-  width: 90%;
-  max-width: 400px;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.close {
-  float: right;
-  font-size: 22px;
-  cursor: pointer;
-}
-.apply-btn{
-  display:inline-block;
-  padding:14px 34px;
-  background:#e50914;
-  color:#fff;
-  font-size:16px;
-  font-weight:600;
+  border:none;
   border-radius:30px;
-  text-decoration:none;
+  background:#e50914;
+  color:#ffffff;
+  cursor:pointer;
   transition:0.3s;
 }
 
-.apply-btn:hover{
-  background:#b20710;
-  transform:scale(1.05);
-}
-.freelance-section{
-  background:#000;
-  color:#fff;
-  padding:60px 20px;
-  text-align:center;
-}
-
-.freelance-buttons{
-  margin-top:20px;
-}
-
-.apply-btn,
-.whatsapp-btn,
-.google-btn{
-  display:inline-block;
-  margin:10px;
-  padding:14px 34px;
-  border-radius:30px;
-  font-size:16px;
-  text-decoration:none;
-  border:none;
-  cursor:pointer;
-}
-
-.apply-btn{
-  background:#e50914;
-  color:#fff;
-}
-
-.whatsapp-btn{
-  background:#25D366;
-  color:#fff;
-}
-
-.google-btn{
-  background:#4285F4;
-  color:#fff;
-}
-
-.apply-btn:hover,
-.whatsapp-btn:hover,
-.google-btn:hover{
-  opacity:0.85;
+#voiceOverlay button:hover{
+  background:#ff1e28;
   transform:scale(1.05);
 }
 
-/* Popup */
-.popup{
+/* =========================
+   HIDE AUDIO PLAYER
+========================= */
+audio{
   display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  z-index:999;
 }
-
-.popup-content{
-  background:#111;
-  color:#fff;
-  max-width:400px;
-  margin:8% auto;
-  padding:30px;
-  border-radius:15px;
-  position:relative;
-}
-
-.popup-content input,
-.popup-content textarea{
-  width:100%;
-  padding:12px;
-  margin:10px 0;
-  border-radius:8px;
-  border:none;
-}
-
-.popup-content button{
-  width:100%;
-  padding:12px;
-  background:#e50914;
-  color:#fff;
-  border:none;
-  border-radius:25px;
-  cursor:pointer;
-}
-
-.close{
-  position:absolute;
-  top:10px;
-  right:15px;
-  font-size:22px;
-  cursor:pointer;
-}
-.social-float{
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 9999;
-}
-
-.social-float a{
-  width: 120px;
-  padding: 12px;
-  text-align: center;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-}
-
-.whatsapp-btn{ background:#25D366; }
-.google-btn{ background:#4285F4; }
-.my-image{
-  width:100%;
-  max-width:600px;
-  border-radius:15px;
-}
-.my-video{
-  width:100%;
-  max-width:800px;
-  border-radius:15px;
-}
-.my-audio{
-  width:100%;
-  max-width:400px;
-}
-index.html
-style.css
-
-/images
-   banner.jpg
-
-/videos
-   movie.mp4
-
-/audio
-   voice.mp3
-.image-box img{
-  width:300px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.5);
-}
-.banner{
-  width:100%;
-  height:400px;
-  object-fit:cover;
-}
-/* Gallery */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  padding:20px;
-}
-.gallery img{
-  width:100%;
-  border-radius:12px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.gallery img:hover{
-  transform:scale(1.05);
-}
-
-/* Popup */
-#popup{
-  display:none;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.8);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-#popup img{
-  max-width:90%;
-  max-height:90%;
-  border-radius:10px;
-}
-.close{
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:40px;
-  color:#fff;
-  cursor:pointer;
-}
-.thumb{
-  width:250px;
-  cursor:pointer;
-  border-radius:10px;
-}
-
-#popup{
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.9);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-#popup img,
-#popup video{
-  max-width:90%;
-  max-height:90%;
-  border-radius:12px;
-}
-#swipeBox{
-  width:100%;
-  height:200px;
-  background:#111;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:24px;
-}
-.fade{
-  animation:fadeIn 1.5s ease;
-}
-.zoom{
-  transition:0.4s;
-}
-.zoom:hover{
-  transform:scale(1.1);
-}
-
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-.thumb{
-  width:250px;
-  cursor:pointer;
-  border-radius:10px;
-}
-
-#popup{
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.9);
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-
-#popup img,
-#popup video{
-  max-width:90%;
-  max-height:90%;
-  border-radius:12px;
-}
-#swipeBox{
-  width:100%;
-  height:200px;
-  background:#111;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:24px;
-}
-.fade{
-  animation:fadeIn 1.5s ease;
-}
-.zoom{
-  transition:0.4s;
-}
-.zoom:hover{
-  transform:scale(1.1);
-}
-
-@keyframes fadeIn{
-  from{opacity:0;}
-  to{opacity:1;}
-}
-.netflix-row{
-  display:flex;
-  gap:15px;
-  overflow-x:auto;
-  padding:10px;
-}
-.netflix-card{
-  min-width:220px;
-  position:relative;
-  transition:0.4s;
-}
-.netflix-card img{
-  width:100%;
-  border-radius:12px;
-}
-.netflix-card span{
-  position:absolute;
-  bottom:10px;left:10px;
-  font-size:14px;
-}
-.netflix-card:hover{
-  transform:scale(1.15);
-  z-index:5;
-}
-.mobile-anim{
-  animation:fadeZoom 2s ease;
-}
-@keyframes fadeZoom{
-  from{opacity:0;transform:scale(.9)}
-  to{opacity:1;transform:scale(1)}
-}
-.hero{
-  height: 80vh;
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("images/hero-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  color: white;
-  text-align: center;
-}
-.hero h1{
-  font-size: 60px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-.hero p{
-  font-size: 20px;
-  opacity: 0.9;
-}
-background-image: url("../images/hero-bg.png");
-.hero{
-  height: 80vh;
-  background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url("../images/hero-bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-audio {
-  display: none;
-}
-#voiceOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#startVoice {
-  padding: 18px 30px;
-  font-size: 20px;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  background: #e50914;
-  color: white;
-}
-
