@@ -499,4 +499,7 @@ background-image: url("../images/hero-bg.png");
   background-position: center;
   background-repeat: no-repeat;
 }
+audio {
+  display: none;
+}
 
