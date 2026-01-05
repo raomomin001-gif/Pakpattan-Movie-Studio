@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome – Pakpattan Movie Studio</title>
+
+<style>
+body{
+  margin:0;
+  background:#000;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial, sans-serif;
+}
+button{
+  padding:18px 40px;
+  font-size:20px;
+  border:none;
+  border-radius:30px;
+  background:#e50914;
+  color:#fff;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="startSite()">🔊 Tap to Enter Website</button>
+
+<audio id="introVoice" preload="auto">
+  <source src="https://raw.githubusercontent.com/raomomin001-gif/Pakpattan-Movie-Studio/main/audio/voice.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startSite(){
+  const v = document.getElementById("introVoice");
+  v.volume = 1;
+  v.play();
+
+  // 2 second baad main site open
+  setTimeout(()=>{
+    window.location.href = "index.html";
+  },2000);
+}
+</script>
+
+</body>
+</html>
 
