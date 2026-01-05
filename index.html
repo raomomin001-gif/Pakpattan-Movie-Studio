@@ -90,7 +90,7 @@ section{padding:80px}
 
 <body>
 
-<!-- 🔊 CLICK TO START VOICE -->
+<!-- 🔊 TAP TO START VOICE -->
 <div id="voiceOverlay">
   <button onclick="startVoice()">🔊 Tap to Start Voice</button>
 </div>
@@ -133,7 +133,7 @@ section{padding:80px}
 </video>
 </div>
 
-<!-- 🎙️ SINGLE VOICE (RAW GITHUB) -->
+<!-- 🎙️ VOICE -->
 <audio id="welcomeVoice" preload="auto">
   <source src="https://raw.githubusercontent.com/raomomin001-gif/Pakpattan-Movie-Studio/main/audio/voice.mp3" type="audio/mpeg">
 </audio>
@@ -163,7 +163,6 @@ function closeImage(){
 }
 
 const voice = document.getElementById("welcomeVoice");
-
 function startVoice(){
   voice.volume = 1;
   voice.play();
