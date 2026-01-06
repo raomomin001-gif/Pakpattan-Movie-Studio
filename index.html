@@ -1,65 +1,72 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AI Ultra Master Website</title>
+<title>AI Modern Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- PWA -->
-<meta name="theme-color" content="#00ffff">
-<link rel="manifest" href="manifest.json">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#000;color:#fff;padding-bottom:70px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#000;color:#fff}
 
-/* NAV */
+/* NAVBAR */
 header{
- position:fixed;top:0;width:100%;z-index:999;
+ position:fixed;top:0;width:100%;
  display:flex;justify-content:space-between;align-items:center;
- padding:12px 20px;background:#000c
+ padding:15px 40px;background:rgba(0,0,0,0.6);z-index:1000
 }
-header a{color:#fff;text-decoration:none;margin-left:15px;font-size:14px}
-.logo{color:#00ffff;font-size:20px}
+header a{color:#fff;text-decoration:none;margin-left:20px}
+header a:hover{color:#00ffff}
+.logo{color:#00ffff;font-size:22px}
 
-/* SECTION */
+/* SECTIONS */
 section{
- height:100vh;display:flex;align-items:center;justify-content:center;
- position:relative;text-align:center;padding:20px
+ height:100vh;position:relative;
+ display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:20px
 }
+
+/* VIDEO BG */
 .bg-video{
  position:absolute;width:100%;height:100%;object-fit:cover
 }
-.bg-img{background-size:cover;background-position:center}
 
-/* CARD */
-.card{
- background:rgba(0,0,0,0.65);
- padding:30px;border-radius:25px;
- box-shadow:0 0 30px #00ffff44;
- max-width:600px;width:100%
+/* IMAGE BG */
+.bg-img{
+ background-size:cover;background-position:center
 }
-.card h1{font-size:36px;margin-bottom:10px}
-.card p,li{font-size:17px;line-height:1.6}
+
+/* OVERLAY */
+.overlay{
+ position:relative;background:rgba(0,0,0,0.6);
+ padding:40px;border-radius:20px;max-width:650px
+}
+.overlay h1{font-size:46px;margin-bottom:15px}
+.overlay p,li{font-size:18px}
 
 /* BUTTON */
 button{
- padding:14px 32px;border:none;border-radius:30px;
- background:#00ffff;color:#000;font-size:15px;cursor:pointer
+ margin-top:20px;padding:14px 35px;
+ border:none;border-radius:30px;
+ background:#00ffff;color:#000;font-size:16px;cursor:pointer
 }
 
 /* CHATBOT */
 #chatbot{
- position:fixed;bottom:90px;right:20px;width:300px;
- background:#111;border-radius:20px;display:none;overflow:hidden
+ position:fixed;bottom:20px;right:20px;width:300px;
+ background:#111;border-radius:15px;overflow:hidden;display:none
 }
-#chatbot h4{background:#00ffff;color:#000;padding:10px}
-#chatBody{padding:10px;height:200px;overflow-y:auto;font-size:14px}
-#chatbot input{width:100%;padding:10px;border:none;outline:none}
-
-/* FLOAT BTN */
-#aiBtn{
- position:fixed;bottom:95px;right:20px;
+#chatbot header{
+ background:#00ffff;color:#000;padding:10px;font-weight:bold
+}
+#chatbot .body{
+ padding:10px;height:200px;overflow-y:auto;font-size:14px
+}
+#chatbot input{
+ width:100%;padding:10px;border:none;outline:none
+}
+#chat-btn{
+ position:fixed;bottom:20px;right:20px;
  background:#00ffff;color:#000;
  padding:15px;border-radius:50%;cursor:pointer
 }
@@ -67,142 +74,139 @@ button{
 /* POPUP */
 #popup{
  position:fixed;top:0;left:0;width:100%;height:100%;
- background:#000c;display:none;align-items:center;justify-content:center
+ background:rgba(0,0,0,0.7);
+ display:none;align-items:center;justify-content:center
 }
 .popup-box{
- background:#111;padding:25px;border-radius:20px;width:300px
+ background:#111;padding:30px;border-radius:20px;width:300px
 }
-.popup-box input{width:100%;padding:10px;margin:8px 0}
+.popup-box input{
+ width:100%;padding:10px;margin:10px 0
+}
 
-/* BOTTOM NAV */
-.bottom-nav{
- position:fixed;bottom:0;width:100%;
- display:flex;justify-content:space-around;
- background:#000;border-top:1px solid #00ffff33;
- padding:10px 0
+/* MOBILE */
+@media(max-width:768px){
+ header{padding:15px}
+ .overlay h1{font-size:30px}
 }
-.bottom-nav a{color:#fff;text-decoration:none;font-size:13px}
-.bottom-nav a:hover{color:#00ffff}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <header>
  <div class="logo">AI WEB</div>
  <nav>
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
   <a href="#contact">Contact</a>
  </nav>
 </header>
 
 <!-- HOME -->
 <section id="home">
- <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
+ <video class="bg-video" autoplay muted loop>
   <source src="video/bg.mp4" type="video/mp4">
  </video>
-
- <div class="card">
+ <div class="overlay">
   <h1>AI Powered Website</h1>
-  <p>Video • Voice • AI • GitHub Ready</p>
-  <button onclick="startExperience()">Start Experience</button>
+  <p>Future Design • Smart AI • Modern Look</p>
+  <button onclick="openPopup()">Apply Freelance</button>
  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="bg-img" style="background-image:url('images/about.jpg')">
- <div class="card">
-  <h1>About</h1>
-  <p>ہم AI پر مبنی جدید ویب سائٹس بناتے ہیں جو ویڈیو اور آواز کے ساتھ چلتی ہیں۔</p>
+ <div class="overlay">
+  <h1>About Us</h1>
+  <p>We build modern AI style websites with video & images.</p>
  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services" class="bg-img" style="background-image:url('images/services.jpg')">
- <div class="card">
-  <h1>Services</h1>
+ <div class="overlay">
+  <h1>Our Services</h1>
   <ul>
-   <li>AI Website</li>
-   <li>Chatbot UI</li>
-   <li>Voice Welcome</li>
-   <li>GitHub Hosting</li>
+   <li>AI Website Design</li>
+   <li>Video Background</li>
+   <li>Freelancing</li>
+   <li>Professional UI</li>
   </ul>
+ </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="bg-img" style="background-image:url('images/portfolio.jpg')">
+ <div class="overlay">
+  <h1>Portfolio</h1>
+  <p>Netflix Style • AI Look • Modern Design</p>
  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="bg-img" style="background-image:url('images/contact.jpg')">
- <div class="card">
-  <h1>Contact</h1>
+ <div class="overlay">
+  <h1>Contact Us</h1>
   <p>Email: your@email.com</p>
  </div>
 </section>
 
-<!-- CHATBOT (UI READY) -->
+<!-- CHATBOT -->
 <div id="chatbot">
- <h4>AI Chatbot</h4>
- <div id="chatBody">السلام علیکم! سوال لکھیں۔</div>
- <input placeholder="Type..." onkeydown="chat(event)">
+ <header>AI Chatbot</header>
+ <div class="body" id="chatBody">
+  Hello! How can I help you?
+ </div>
+ <input type="text" placeholder="Type..." onkeydown="chat(event)">
 </div>
-<div id="aiBtn" onclick="toggleChat()">AI</div>
+<div id="chat-btn" onclick="toggleChat()">AI</div>
 
-<!-- FREELANCE POPUP -->
+<!-- POPUP -->
 <div id="popup">
  <div class="popup-box">
-  <h3>Apply Freelance</h3>
-  <input id="name" placeholder="Name">
-  <input id="skill" placeholder="Skill">
-  <input id="email" placeholder="Email">
-  <button onclick="sendEmail()">Submit</button>
+  <h3>Freelance Apply</h3>
+  <input placeholder="Your Name">
+  <input placeholder="Your Skill">
+  <input placeholder="Your Email">
+  <button onclick="closePopup()">Submit</button>
  </div>
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="bottom-nav">
- <a href="#home">🏠 Home</a>
- <a href="#about">ℹ About</a>
- <a href="#services">🛠 Services</a>
- <a href="#contact">📞 Contact</a>
-</div>
-
 <script>
-let voicePlayed=false;
-
-/* START EXPERIENCE (VIDEO + VOICE) */
-function startExperience(){
- if(voicePlayed) return;
-
- let msg = new SpeechSynthesisUtterance(
- "السلام علیکم! ہماری اے آئی ویب سائٹ میں خوش آمدید۔ ویڈیو اور سروسز دیکھیں۔"
- );
- msg.lang="ur-PK";
- msg.rate=0.75;
- msg.pitch=1;
-
- speechSynthesis.speak(msg);
- voicePlayed=true;
-}
-
-/* CHATBOT UI (DEMO) */
+/* CHATBOT */
 function toggleChat(){
- chatbot.style.display = chatbot.style.display=="block"?"none":"block";
+ let c=document.getElementById("chatbot");
+ c.style.display=c.style.display=="block"?"none":"block";
 }
 function chat(e){
  if(e.key==="Enter"){
-  chatBody.innerHTML += "<br>آپ: "+e.target.value+
-  "<br>AI: یہ ڈیمو چیٹ ہے، اصل AI بعد میں connect ہوگا۔";
+  let body=document.getElementById("chatBody");
+  body.innerHTML+="<br>You: "+e.target.value+
+  "<br>AI: Thanks for contacting us!";
   e.target.value="";
  }
 }
 
-/* EMAIL (GITHUB SAFE) */
-function sendEmail(){
- let n=name.value, s=skill.value, e=email.value;
- window.location =
- "mailto:your@email.com?subject=Freelance Apply&body="
- + "Name: "+n+"%0ASkill: "+s+"%0AEmail: "+e;
+/* POPUP */
+function openPopup(){
+ document.getElementById("popup").style.display="flex";
+}
+function closePopup(){
+ document.getElementById("popup").style.display="none";
+}
+
+/* AUTO VOICE (URDU) */
+window.onclick=function(){
+ let msg=new SpeechSynthesisUtterance(
+ "السلام علیکم! ہماری ویب سائٹ میں خوش آمدید۔"
+ );
+ msg.lang="ur-PK";
+ msg.rate=0.8;
+ speechSynthesis.speak(msg);
 }
 </script>
 
