@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <title>AI Ultra Master Website</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- PWA -->
+<meta name="theme-color" content="#00ffff">
+<link rel="manifest" href="manifest.json">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#000;color:#fff}
+body{background:#000;color:#fff;padding-bottom:70px}
 
-/* TOP NAV */
+/* NAV */
 header{
- position:fixed;top:0;width:100%;
+ position:fixed;top:0;width:100%;z-index:999;
  display:flex;justify-content:space-between;align-items:center;
- padding:12px 25px;background:#000c;z-index:999
+ padding:12px 20px;background:#000c
 }
 header a{color:#fff;text-decoration:none;margin-left:15px;font-size:14px}
 .logo{color:#00ffff;font-size:20px}
@@ -28,48 +32,36 @@ section{
 }
 .bg-img{background-size:cover;background-position:center}
 
-/* GLASS CARD (ANDROID FEEL) */
+/* CARD */
 .card{
  background:rgba(0,0,0,0.65);
  padding:30px;border-radius:25px;
- box-shadow:0 0 25px #00ffff55;
+ box-shadow:0 0 30px #00ffff44;
  max-width:600px;width:100%
 }
-.card h1{font-size:38px;margin-bottom:10px}
+.card h1{font-size:36px;margin-bottom:10px}
 .card p,li{font-size:17px;line-height:1.6}
 
 /* BUTTON */
 button{
- margin-top:15px;padding:14px 32px;border:none;
- background:#00ffff;color:#000;font-size:15px;
- border-radius:30px;cursor:pointer
+ padding:14px 32px;border:none;border-radius:30px;
+ background:#00ffff;color:#000;font-size:15px;cursor:pointer
 }
-
-/* BOTTOM NAV (APP STYLE) */
-.bottom-nav{
- position:fixed;bottom:0;width:100%;
- display:flex;justify-content:space-around;
- background:#000;padding:10px 0;border-top:1px solid #00ffff33
-}
-.bottom-nav a{
- color:#fff;text-decoration:none;font-size:13px
-}
-.bottom-nav a:hover{color:#00ffff}
 
 /* CHATBOT */
 #chatbot{
- position:fixed;bottom:80px;right:20px;width:280px;
+ position:fixed;bottom:90px;right:20px;width:300px;
  background:#111;border-radius:20px;display:none;overflow:hidden
 }
 #chatbot h4{background:#00ffff;color:#000;padding:10px}
-#chatBody{padding:10px;height:180px;overflow-y:auto;font-size:14px}
+#chatBody{padding:10px;height:200px;overflow-y:auto;font-size:14px}
 #chatbot input{width:100%;padding:10px;border:none;outline:none}
 
-/* FLOAT BUTTON */
+/* FLOAT BTN */
 #aiBtn{
- position:fixed;bottom:90px;right:20px;
+ position:fixed;bottom:95px;right:20px;
  background:#00ffff;color:#000;
- padding:14px;border-radius:50%;cursor:pointer
+ padding:15px;border-radius:50%;cursor:pointer
 }
 
 /* POPUP */
@@ -81,12 +73,21 @@ button{
  background:#111;padding:25px;border-radius:20px;width:300px
 }
 .popup-box input{width:100%;padding:10px;margin:8px 0}
+
+/* BOTTOM NAV */
+.bottom-nav{
+ position:fixed;bottom:0;width:100%;
+ display:flex;justify-content:space-around;
+ background:#000;border-top:1px solid #00ffff33;
+ padding:10px 0
+}
+.bottom-nav a{color:#fff;text-decoration:none;font-size:13px}
+.bottom-nav a:hover{color:#00ffff}
 </style>
 </head>
 
 <body>
 
-<!-- TOP NAV -->
 <header>
  <div class="logo">AI WEB</div>
  <nav>
@@ -99,21 +100,22 @@ button{
 
 <!-- HOME -->
 <section id="home">
- <video class="bg-video" autoplay muted loop>
+ <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
   <source src="video/bg.mp4" type="video/mp4">
  </video>
+
  <div class="card">
   <h1>AI Powered Website</h1>
-  <p>Future • AI • Android App Style UI</p>
-  <button onclick="openPopup()">Freelance Apply</button>
+  <p>Video • Voice • AI • GitHub Ready</p>
+  <button onclick="startExperience()">Start Experience</button>
  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="bg-img" style="background-image:url('images/about.jpg')">
  <div class="card">
-  <h1>About Us</h1>
-  <p>ہم جدید AI ویب سائٹس بناتے ہیں جن میں ویڈیو، آواز اور چیٹ بوٹ شامل ہوتا ہے۔</p>
+  <h1>About</h1>
+  <p>ہم AI پر مبنی جدید ویب سائٹس بناتے ہیں جو ویڈیو اور آواز کے ساتھ چلتی ہیں۔</p>
  </div>
 </section>
 
@@ -122,10 +124,10 @@ button{
  <div class="card">
   <h1>Services</h1>
   <ul>
-   <li>AI Website Design</li>
-   <li>Android App Style UI</li>
-   <li>Video Background</li>
-   <li>Freelance Projects</li>
+   <li>AI Website</li>
+   <li>Chatbot UI</li>
+   <li>Voice Welcome</li>
+   <li>GitHub Hosting</li>
   </ul>
  </div>
 </section>
@@ -138,22 +140,22 @@ button{
  </div>
 </section>
 
-<!-- CHATBOT -->
+<!-- CHATBOT (UI READY) -->
 <div id="chatbot">
  <h4>AI Chatbot</h4>
- <div id="chatBody">السلام علیکم! کیسے مدد کر سکتا ہوں؟</div>
+ <div id="chatBody">السلام علیکم! سوال لکھیں۔</div>
  <input placeholder="Type..." onkeydown="chat(event)">
 </div>
 <div id="aiBtn" onclick="toggleChat()">AI</div>
 
-<!-- POPUP -->
+<!-- FREELANCE POPUP -->
 <div id="popup">
  <div class="popup-box">
   <h3>Apply Freelance</h3>
-  <input placeholder="Name">
-  <input placeholder="Skill">
-  <input placeholder="Email">
-  <button onclick="closePopup()">Submit</button>
+  <input id="name" placeholder="Name">
+  <input id="skill" placeholder="Skill">
+  <input id="email" placeholder="Email">
+  <button onclick="sendEmail()">Submit</button>
  </div>
 </div>
 
@@ -166,31 +168,41 @@ button{
 </div>
 
 <script>
-/* CHATBOT */
+let voicePlayed=false;
+
+/* START EXPERIENCE (VIDEO + VOICE) */
+function startExperience(){
+ if(voicePlayed) return;
+
+ let msg = new SpeechSynthesisUtterance(
+ "السلام علیکم! ہماری اے آئی ویب سائٹ میں خوش آمدید۔ ویڈیو اور سروسز دیکھیں۔"
+ );
+ msg.lang="ur-PK";
+ msg.rate=0.75;
+ msg.pitch=1;
+
+ speechSynthesis.speak(msg);
+ voicePlayed=true;
+}
+
+/* CHATBOT UI (DEMO) */
 function toggleChat(){
- let c=document.getElementById("chatbot");
- c.style.display=c.style.display=="block"?"none":"block";
+ chatbot.style.display = chatbot.style.display=="block"?"none":"block";
 }
 function chat(e){
  if(e.key==="Enter"){
-  let b=document.getElementById("chatBody");
-  b.innerHTML+="<br>آپ: "+e.target.value+"<br>AI: شکریہ! ہم جلد رابطہ کریں گے۔";
+  chatBody.innerHTML += "<br>آپ: "+e.target.value+
+  "<br>AI: یہ ڈیمو چیٹ ہے، اصل AI بعد میں connect ہوگا۔";
   e.target.value="";
  }
 }
 
-/* POPUP */
-function openPopup(){popup.style.display="flex"}
-function closePopup(){popup.style.display="none"}
-
-/* URDU VOICE WELCOME */
-window.onload=function(){
- let msg=new SpeechSynthesisUtterance(
- "السلام علیکم! ہماری اے آئی ویب سائٹ میں خوش آمدید۔"
- );
- msg.lang="ur-PK";
- msg.rate=0.75;
- speechSynthesis.speak(msg);
+/* EMAIL (GITHUB SAFE) */
+function sendEmail(){
+ let n=name.value, s=skill.value, e=email.value;
+ window.location =
+ "mailto:your@email.com?subject=Freelance Apply&body="
+ + "Name: "+n+"%0ASkill: "+s+"%0AEmail: "+e;
 }
 </script>
 
